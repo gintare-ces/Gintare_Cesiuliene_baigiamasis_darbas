@@ -14,14 +14,6 @@ export default {
         '2xl': '6rem',
       },
     },
-    // colors: {
-    //   'white': '#fffff',
-    //   'fuchsia': {
-    //     600: 'c026d3',
-    //     700: '#a21caf',
-    //   },
-    // },
-    
   },
   plugins: [],
 }
