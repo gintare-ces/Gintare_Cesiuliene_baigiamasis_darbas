@@ -1,9 +1,5 @@
 @tailwind base;
 @tailwind components;
-
-/* .container {
-    @apply 
-} */
 @tailwind utilities;
 
 @layer base {
