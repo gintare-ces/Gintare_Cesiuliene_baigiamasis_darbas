@@ -1,13 +1,32 @@
 import { useFormik } from "formik";
 import React from "react";
 import {Link} from "react-router-dom";
+import * as Yup from 'yup';
 
 function LoginForm() {
+
+  // const loginVal = Yup.object().shape({
+  //   email: Yup.string()
+  //     .email('Invalid email')
+  //     .required('Email is required'),
+  //   password: Yup.string()
+  //     .min(6, 'Password must be minimum 6 characters')
+  //     .required('Password is required')
+  // })
+
   const formik =  useFormik({
     initialValues: {
       email: '',
       password: '',
     },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email('Invalid email')
+        .required('Email is required'),
+      password: Yup.string()
+        .min(6, 'Password must be minimum 6 characters')
+        .required('Password is required')
+    }),
     onSubmit: (values) => {
       console.log('values ===', values);
     }
@@ -29,6 +48,11 @@ function LoginForm() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
+          {formik.touched.email && formik.errors.email ? (
+            <div>{formik.errors.email}</div>
+          ) : null}
+                    
+               
         </div>
         <div className="mb-6">
           <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="password">
@@ -43,6 +67,9 @@ function LoginForm() {
             onBlur={formik.handleBlur}
             value={formik.values.password}
           />
+          {formik.touched.password && formik.errors.password ? (
+            <div>{formik.errors.password}</div>
+          ) : null}
         </div>
         <div className="flex items-center justify-between">
           <button
