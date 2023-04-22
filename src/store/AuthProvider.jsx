@@ -25,6 +25,8 @@ function AuthProvider({ children }) {
         } else {
           // User is signed out
           // ...
+          console.log('Logout user');
+          setUser(null)
           
         }
       });
