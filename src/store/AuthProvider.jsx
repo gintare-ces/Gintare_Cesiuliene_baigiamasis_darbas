@@ -29,7 +29,7 @@ function AuthProvider({ children }) {
         }
       });
     }, [])
-    const isLoggedIn = !user
+    const isLoggedIn = !!user
 
     function login(userObj) {
       setUser(userObj)
