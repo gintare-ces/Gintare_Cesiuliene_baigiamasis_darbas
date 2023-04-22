@@ -1,12 +1,15 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase";
 
 const AuthContext = createContext({
-    user: null,
+    user: {},
+    login() {},
 })
 
-function AuthProvider() {
+AuthContext.displayName = 'AutentifikacijaCTX';
+
+function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
 
     useEffect(() => {
@@ -16,6 +19,7 @@ function AuthProvider() {
           // https://firebase.google.com/docs/reference/js/firebase.User
           const uid = user.uid;
           // ...
+          console.log('prisijungimas', user.email);
           setUser(user)
         } else {
           // User is signed out
@@ -24,10 +28,25 @@ function AuthProvider() {
         }
       });
     }, [])
-  return (
-    // <AuthContext.Provider></AuthContext.Provider>>
-    <div></div>
-  );
+    const isLoggedIn = !user
+
+    function login(userObj) {
+      setUser(userObj)
+    }
+
+    const authCtx = {
+      user,
+      login,
+      isLoggedIn,
+    }
+   
+    return (
+      <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>
+    );
 }
 
 export default AuthProvider
+
+export function useAuthCtx() {
+  return useContext(AuthContext)
+}
