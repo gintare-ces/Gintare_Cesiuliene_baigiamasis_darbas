@@ -3,7 +3,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import * as Yup from 'yup';
 
-function LoginForm() {
+function LoginForm({ onLogin }) {
 
   // const loginVal = Yup.object().shape({
   //   email: Yup.string()
@@ -29,6 +29,7 @@ function LoginForm() {
     }),
     onSubmit: (values) => {
       console.log('values ===', values);
+      onLogin(values)
     }
   })
 

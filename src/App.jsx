@@ -6,7 +6,6 @@ import ShopsPage from './pages/ShopsPage';
 import AddShopPage from './pages/AddShopPage';
 import Header from './components/layout/Header';
 import HomePage from './pages/HomePage';
-import { app } from './firebase/firebase'
 
 function App() {
   
