@@ -5,6 +5,7 @@ import { auth } from "../firebase/firebase";
 const AuthContext = createContext({
     user: {},
     login() {},
+    logout() {},
 })
 
 AuthContext.displayName = 'AutentifikacijaCTX';
@@ -33,10 +34,14 @@ function AuthProvider({ children }) {
     function login(userObj) {
       setUser(userObj)
     }
+    function logout() {
+      setUser(null)
+    }
 
     const authCtx = {
       user,
       login,
+      logout,
       isLoggedIn,
     }
    
