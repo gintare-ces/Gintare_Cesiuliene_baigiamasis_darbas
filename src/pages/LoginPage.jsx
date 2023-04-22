@@ -1,19 +1,25 @@
 import React from "react";
 import LoginForm from "../components/auth/LoginForm";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useAuthCtx } from "../store/AuthProvider";
+import { auth } from "../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate()
+  const { login } = useAuthCtx()
   function loginUser({ email, password }) {
     console.log('{ email, password } ===', { email, password });
-    // email, password
-    const auth = getAuth();
+    // email, password 
+ 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         // ...
-        console.log('user ===', user);
-        console.log('login success');
+        console.log('login success', user);
+        login(user);
+        navigate('/shops')
       })
       .catch((error) => {
         const errorCode = error.code;

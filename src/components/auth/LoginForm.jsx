@@ -5,15 +5,6 @@ import * as Yup from 'yup';
 
 function LoginForm({ onLogin }) {
 
-  // const loginVal = Yup.object().shape({
-  //   email: Yup.string()
-  //     .email('Invalid email')
-  //     .required('Email is required'),
-  //   password: Yup.string()
-  //     .min(6, 'Password must be minimum 6 characters')
-  //     .required('Password is required')
-  // })
-
   const formik =  useFormik({
     initialValues: {
       email: '',
@@ -44,6 +35,7 @@ function LoginForm({ onLogin }) {
             className="shadow border rounded w-full py-2 px-3 text-gray-700"
             id="email"
             type="email"
+            name="email"
             placeholder="Email"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -63,6 +55,7 @@ function LoginForm({ onLogin }) {
             className="shadow border rounded w-full py-2 px-3 text-gray-700"
             id="password"
             type="password"
+            name="password"
             placeholder="password"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
