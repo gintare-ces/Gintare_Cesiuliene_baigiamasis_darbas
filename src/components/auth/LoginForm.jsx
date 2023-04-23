@@ -2,9 +2,10 @@ import { useFormik } from "formik";
 import React from "react";
 import {Link} from "react-router-dom";
 import * as Yup from 'yup';
+import { useAuthCtx } from "../../store/AuthProvider";
 
 function LoginForm({ onLogin }) {
-
+  const { isLoadinng } = useAuthCtx()
   const formik =  useFormik({
     initialValues: {
       email: '',
@@ -67,6 +68,7 @@ function LoginForm({ onLogin }) {
         </div>
         <div className="flex items-center justify-between">
           <button
+            disabled={isLoadinng}
             type='submit'
             className="bg-white border-2 border-fuchsia-700 hover:bg-fuchsia-700 text-black hover:text-white font-bold py-2 px-6 rounded-full"
             >Sign In</button>

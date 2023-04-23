@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useAuthCtx } from "../store/AuthProvider";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -19,6 +20,7 @@ function LoginPage() {
         // ...
         console.log('login success', user);
         login(user);
+        toast.success('Success, you are logged in')
         navigate('/shops')
       })
       .catch((error) => {

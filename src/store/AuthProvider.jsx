@@ -6,12 +6,15 @@ const AuthContext = createContext({
     user: {},
     login() {},
     logout() {},
+    register() {},
+    isLoading: false,
 })
 
 AuthContext.displayName = 'AutentifikacijaCTX';
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
@@ -36,6 +39,9 @@ function AuthProvider({ children }) {
     function login(userObj) {
       setUser(userObj)
     }
+    function register(newUObj) {
+      setUser(newUObj)
+    }
     function logout() {
       setUser(null)
     }
@@ -44,7 +50,9 @@ function AuthProvider({ children }) {
       user,
       login,
       logout,
+      register,
       isLoggedIn,
+      isLoading,
     }
    
     return (

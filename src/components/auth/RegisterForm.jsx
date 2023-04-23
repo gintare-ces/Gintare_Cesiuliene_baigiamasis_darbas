@@ -2,8 +2,10 @@ import { useFormik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
+import { useAuthCtx } from "../../store/AuthProvider";
 
-function RegisterForm() {
+function RegisterForm({ onRegister }) {
+  const { isLoading } = useAuthCtx()
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -17,6 +19,7 @@ function RegisterForm() {
     }),
     onSubmit: (values) => {
       console.log("values ===", values);
+      onRegister(values)
     },
   });
   return (
@@ -59,6 +62,7 @@ function RegisterForm() {
         </div>
         <div className="grid grid-cols-2 gap-6 items-center text-center">
           <button
+            disabled={isLoading}
             type="submit"
             className="bg-white border-2 border-fuchsia-700 hover:bg-fuchsia-700 text-black hover:text-white font-bold py-2 px-6 rounded-full"
           >
