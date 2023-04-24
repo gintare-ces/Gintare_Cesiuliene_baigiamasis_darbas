@@ -6,24 +6,24 @@ import LogoutForm from '../auth/LogoutForm';
 function Header() {
   const { isLoggedIn } = useAuthCtx()
   return (
-    <header  className='bg-neutral-800 dark:bg-neutral-900'>
-        <div className='px-8 relative flex w-full flex-wrap items-center justify-between '>
-            <Link to={'/'} className='p-2 py-2 text-2xl font-roboto text-white  font-bold' ><span className='text-fuchsia-600 text-2xl'>S</span>hop</Link>
+    <header  className='pt-6'>
+        <div className='md:px-10 relative flex w-full flex-wrap items-center justify-between '>
+            <Link to={'/'} className='p-2 py-2 text-2xl font-roboto text-white  font-bold' ><i className="fa fa-envira bg-clip-text bg-gradient-to-r from-cyan-600 hover:border-b-4 hover:border-fuchsia-700 text-transparent" aria-hidden="true"></i>SHOP</Link>
             <nav className='pl-6'>
               {isLoggedIn &&
                 <>
-                <NavLink to={'/shops'} className='px-4 py-4 text-xl font-roboto text-white hover:bg-fuchsia-700 '   >Shops</NavLink>
-                <NavLink to={'/shops/add'} className='px-4 py-4 text-xl font-roboto text-white hover:bg-fuchsia-700' >Add Shop</NavLink>
+                <NavLink to={'/shops'} className='px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold'   >Shops</NavLink>
+                <NavLink to={'/shops/add'} className='px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold' >Add Shop</NavLink>
                 <NavLink >
                   <LogoutForm />
                 </NavLink>
                 </>
               }
               {!isLoggedIn && 
-                <NavLink to={'/login'} className='px-4 py-4 text-xl font-roboto text-white hover:bg-fuchsia-700' >Login</NavLink>
+                <NavLink to={'/login'} className='px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold' >Login</NavLink>
               }
               {!isLoggedIn && 
-                <NavLink to={'/register'} className='px-4 py-4 text-xl font-roboto text-white hover:bg-fuchsia-700' >Register</NavLink>
+                <NavLink to={'/register'} className='px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold' >Register</NavLink>
               }
             </nav>
 
