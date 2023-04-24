@@ -31,7 +31,7 @@ function LoginPage() {
   }
   return (
     <div className="container mx-auto">
-      <h1>Login here</h1>
+      <h1 className="text-white text-3xl font-bold px-4 pt-12 flex flex-wrap">Login to get full accsess</h1>
       <LoginForm onLogin={loginUser} />
     </div>
   );
