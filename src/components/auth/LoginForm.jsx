@@ -27,9 +27,9 @@ function LoginForm({ onLogin }) {
 
   return (
     <div className="w-full max-w-xs md:mt-12 ">
-      <form onSubmit={formik.handleSubmit} className="backdrop-blur-lg rounded-lg px-4 pt-4 pb-4 mb-4 ">
-        <div className="mb-4">
-          <label className="block text-white  text-xl font-bold mb-2" htmlFor="email">
+      <form onSubmit={formik.handleSubmit} className="px-4 pt-4 pb-4 mb-4 ">
+        <div className="mb-8">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="email">
             Enter your email
           </label>
           <input
@@ -74,7 +74,7 @@ function LoginForm({ onLogin }) {
             >Sign In</button>
             <p className="text-white">
               Or register?
-               <Link to={'/register'} className="inline-block font-bold text-xl text-fuchsia-700 border-b-4 border-fuchsia-700 ">Register here</Link>
+               <Link to={'/register'} className="inline-block font-bold text-lg text-fuchsia-700 border-b-4 border-fuchsia-700 ">Register here</Link>
 
             </p>
         </div>

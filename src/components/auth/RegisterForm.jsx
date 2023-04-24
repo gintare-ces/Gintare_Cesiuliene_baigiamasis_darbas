@@ -23,17 +23,17 @@ function RegisterForm({ onRegister }) {
     },
   });
   return (
-    <div className="w-full max-w-xs mt-8 ">
+    <div className="w-full max-w-xs md:mt-12 ">
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border hover:border-fuchsia-700"
+        className="px-4 pt-4 pb-4 mb-4 "
       >
-        <div className="mb-4">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="email">
+        <div className="mb-8">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="email">
             Enter your email
           </label>
           <input
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="email"
             type="email"
             placeholder="Email"
@@ -41,14 +41,14 @@ function RegisterForm({ onRegister }) {
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-          {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          {formik.touched.email && formik.errors.email ? <div className="text-fuchsia-500">{formik.errors.email}</div> : null}
         </div>
-        <div className="mb-6">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="password">
+        <div className="mb-8">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="password">
             Password
           </label>
           <input
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="password"
             type="password"
             placeholder="password"
@@ -57,19 +57,19 @@ function RegisterForm({ onRegister }) {
             value={formik.values.password}
           />
           {formik.touched.password && formik.errors.password ? (
-            <div>{formik.errors.password}</div>
+            <div className="text-fuchsia-500">{formik.errors.password}</div>
           ) : null}
         </div>
         <div className="grid grid-cols-2 gap-6 items-center text-center">
           <button
             disabled={isLoading}
             type="submit"
-            className="bg-white border-2 border-fuchsia-700 hover:bg-fuchsia-700 text-black hover:text-white font-bold py-2 px-6 rounded-full"
+            className="bg-white  border-fuchsia-700 border-4 shadow-lg shadow-fuchsia-500/40 hover:bg-fuchsia-700 text-xl text-black hover:text-white font-bold py-3 px-6 rounded-full"
           >
             Register
           </button>
-          <p>
-            {" "}
+          <p className="text-white">
+            
             Have account?
             <Link
               to={"/login"}

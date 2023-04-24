@@ -29,7 +29,7 @@ function RegisterPage() {
   }
   return (
     <div className="container mx-auto">
-      <h1>Register Page</h1>
+      <h1 className="text-white text-3xl font-bold px-4 pt-12 flex flex-wrap">Register Page</h1>
       <RegisterForm onRegister={registerUser} />
     </div>
   );
