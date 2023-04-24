@@ -41,9 +41,9 @@ function ShopPage() {
   }
   return (
     <div className='container mx-auto '>
-        <h1>Welcome to Shop Page</h1>
+        <h1 className="text-white text-3xl font-bold px-4 pt-12 pb-4"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Shops</h1>
         
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
             {shopsArr.map((sObj) => (
                 <SingleShopCard 
                   item={sObj} 
