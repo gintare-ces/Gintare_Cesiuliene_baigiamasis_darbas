@@ -1,29 +1,27 @@
 import { useFormik } from "formik";
 import React from "react";
-import {Link} from "react-router-dom";
-import * as Yup from 'yup';
+import { Link } from "react-router-dom";
+import * as Yup from "yup";
 import { useAuthCtx } from "../../store/AuthProvider";
 
 function LoginForm({ onLogin }) {
-  const { isLoadinng } = useAuthCtx()
-  const formik =  useFormik({
+  const { isLoadinng } = useAuthCtx();
+  const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string()
-        .email('Invalid email')
-        .required('Email is required'),
+      email: Yup.string().email("Invalid email").required("Email is required"),
       password: Yup.string()
-        .min(6, 'Password must be minimum 6 characters')
-        .required('Password is required')
+        .min(6, "Password must be minimum 6 characters")
+        .required("Password is required"),
     }),
     onSubmit: (values) => {
-      console.log('values ===', values);
-      onLogin(values)
-    }
-  })
+      console.log("values ===", values);
+      onLogin(values);
+    },
+  });
 
   return (
     <div className="w-full max-w-xs md:mt-12 ">
@@ -45,8 +43,6 @@ function LoginForm({ onLogin }) {
           {formik.touched.email && formik.errors.email ? (
             <div className="text-fuchsia-500">{formik.errors.email}</div>
           ) : null}
-                    
-               
         </div>
         <div className="mb-8">
           <label className="block text-white text-xl font-bold mb-2" htmlFor="password">
@@ -69,14 +65,20 @@ function LoginForm({ onLogin }) {
         <div className="grid grid-cols-2 gap-4 items-center text-center">
           <button
             disabled={isLoadinng}
-            type='submit'
+            type="submit"
             className="bg-white  border-fuchsia-700 border-4 shadow-lg shadow-fuchsia-500/40 hover:bg-fuchsia-700 text-xl text-black hover:text-white font-bold py-3 px-6 rounded-full"
-            >Sign In</button>
-            <p className="text-white">
-              Or register?
-               <Link to={'/register'} className="inline-block font-bold text-lg text-fuchsia-700 border-b-4 border-fuchsia-700 ">Register here</Link>
-
-            </p>
+          >
+            Sign In
+          </button>
+          <p className="text-white">
+            Or register?
+            <Link
+              to={"/register"}
+              className="inline-block font-bold text-lg text-fuchsia-700 border-b-4 border-fuchsia-700 "
+            >
+              Register here
+            </Link>
+          </p>
         </div>
       </form>
     </div>

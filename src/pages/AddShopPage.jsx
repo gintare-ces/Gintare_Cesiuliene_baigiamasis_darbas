@@ -17,16 +17,16 @@ function AddShopPage() {
     } catch (error) {
       toast.error("Failed");
       console.log("error ===", error);
-    };
-  };
+    }
+  }
   if (isLoading) {
-    return <Loading />
-  };
+    return <Loading />;
+  }
   return (
     <div className="container mx-auto">
       <AddShopForm onNewShop={addNewShop} />
     </div>
   );
-};
+}
 
 export default AddShopPage;

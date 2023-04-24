@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { useAuthCtx } from "../../store/AuthProvider";
 
 function RegisterForm({ onRegister }) {
-  const { isLoading } = useAuthCtx()
+  const { isLoading } = useAuthCtx();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -19,15 +19,12 @@ function RegisterForm({ onRegister }) {
     }),
     onSubmit: (values) => {
       console.log("values ===", values);
-      onRegister(values)
+      onRegister(values);
     },
   });
   return (
     <div className="w-full max-w-xs md:mt-12 ">
-      <form
-        onSubmit={formik.handleSubmit}
-        className="px-4 pt-4 pb-4 mb-4 "
-      >
+      <form onSubmit={formik.handleSubmit} className="px-4 pt-4 pb-4 mb-4 ">
         <div className="mb-8">
           <label className="block text-white text-xl font-bold mb-2" htmlFor="email">
             Enter your email
@@ -41,7 +38,9 @@ function RegisterForm({ onRegister }) {
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-          {formik.touched.email && formik.errors.email ? <div className="text-fuchsia-500">{formik.errors.email}</div> : null}
+          {formik.touched.email && formik.errors.email ? (
+            <div className="text-fuchsia-500">{formik.errors.email}</div>
+          ) : null}
         </div>
         <div className="mb-8">
           <label className="block text-white text-xl font-bold mb-2" htmlFor="password">
@@ -69,7 +68,6 @@ function RegisterForm({ onRegister }) {
             Register
           </button>
           <p className="text-white">
-            
             Have account?
             <Link
               to={"/login"}

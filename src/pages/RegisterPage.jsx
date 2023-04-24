@@ -6,26 +6,25 @@ import { useAuthCtx } from "../store/AuthProvider";
 import { toast } from "react-hot-toast";
 
 function RegisterPage() {
-  const { register } = useAuthCtx()
+  const { register } = useAuthCtx();
   function registerUser({ email, password }) {
-    console.log('{ email, password} ===', { email, password});
+    console.log("{ email, password} ===", { email, password });
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         // ...
-        console.log('user ===', user);
-        register(user)
-        toast.success('Successfully registered')
+        console.log("user ===", user);
+        register(user);
+        toast.success("Successfully registered");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('errorMessage ===', errorMessage);
+        console.log("errorMessage ===", errorMessage);
         // ..
-        toast.error('Something happened, try again later');
+        toast.error("Something happened, try again later");
       });
-
   }
   return (
     <div className="container mx-auto">
