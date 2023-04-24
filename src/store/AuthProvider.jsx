@@ -17,6 +17,7 @@ function AuthProvider({ children }) {
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
+      setIsLoading(true)
       onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
@@ -32,6 +33,7 @@ function AuthProvider({ children }) {
           setUser(null)
           
         }
+        setIsLoading(false)
       });
     }, [])
     const isLoggedIn = !!user
