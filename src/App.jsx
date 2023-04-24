@@ -11,7 +11,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div>
+    <div >
       <Header />
       <Toaster />
       <Routes>
