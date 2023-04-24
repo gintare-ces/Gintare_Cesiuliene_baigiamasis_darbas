@@ -42,18 +42,18 @@ function AddShopForm({ onNewShop }) {
   });
   
   return (
-    <div className="w-full max-w-xl mt-10 mx-auto">
+    <div className="w-full max-w-xl mt-2 mx-auto">
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border hover:border-fuchsia-700"
+        className=" px-8 pt-6 pb-8 mb-4 "
       >
-        <h2 className="text-xl text-center font-bold mb-6">Add your Shop</h2>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="shopName">
+        <h2 className="text-white text-3xl font-bold px-4 pt-10 pb-8 text-center">Add your Shop</h2>
+        <div className="mb-6">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="shopName">
             Enter your Shop name
           </label>
           <input
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="shopName"
             type="text"
             name="shopName"
@@ -63,15 +63,15 @@ function AddShopForm({ onNewShop }) {
             value={formik.values.shopName}
           />
           {formik.touched.shopName && formik.errors.shopName ? (
-            <div>{formik.errors.shopName}</div>
+            <div className="text-fuchsia-500">{formik.errors.shopName}</div>
           ) : null}
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="town">
+        <div className="mb-6">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="town">
             Enter Shops town
           </label>
           <input
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="town"
             type="text"
             name="town"
@@ -80,14 +80,14 @@ function AddShopForm({ onNewShop }) {
             onBlur={formik.handleBlur}
             value={formik.values.town}
           />
-          {formik.touched.town && formik.errors.town ? <div>{formik.errors.town}</div> : null}
+          {formik.touched.town && formik.errors.town ? <div className="text-fuchsia-500">{formik.errors.town}</div> : null}
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="startYear">
+        <div className="mb-6">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="startYear">
             When your shop is opened?
           </label>
           <input
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="startYear"
             type="text"
             name="startYear"
@@ -97,32 +97,32 @@ function AddShopForm({ onNewShop }) {
             value={formik.values.startYear}
           />
           {formik.touched.startYear && formik.errors.startYear ? (
-            <div>{formik.errors.startYear}</div>
+            <div className="text-fuchsia-500">{formik.errors.startYear}</div>
           ) : null}
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="description">
+        <div className="mb-6">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="description">
             Description
           </label>
           <textarea
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="description"
             name="description"
-            placeholder="Desxription"
+            placeholder="Description"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.description}
           />
           {formik.touched.description && formik.errors.description ? (
-            <div>{formik.errors.description}</div>
+            <div className="text-fuchsia-500">{formik.errors.description}</div>
           ) : null}
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-base font-bold mb-2" htmlFor="imageUrl">
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="imageUrl">
             Add image url adress
           </label>
           <input
-            className="shadow border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="imageUrl"
             type="text"
             name="imageUrl"
@@ -132,13 +132,13 @@ function AddShopForm({ onNewShop }) {
             value={formik.values.imageUrl}
           />
           {formik.touched.imageUrl && formik.errors.imageUrl ? (
-            <div>{formik.errors.imageUrl}</div>
+            <div className="text-fuchsia-500">{formik.errors.imageUrl}</div>
           ) : null}
         </div>
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-white border-2 border-fuchsia-700 hover:bg-fuchsia-700 text-black hover:text-white font-bold py-2 px-20 rounded-full mx-auto"
+            className="bg-white  border-fuchsia-700 border-4 shadow-lg shadow-fuchsia-700/40 hover:bg-fuchsia-900 text-xl text-black hover:text-white font-bold py-3 px-20 rounded-full"
           >
             Add Shop
           </button>
