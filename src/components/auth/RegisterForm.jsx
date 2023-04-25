@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { useAuthCtx } from "../../store/AuthProvider";
 
-function LoginForm({ onLogin }) {
-  const { isLoadinng } = useAuthCtx();
+function RegisterForm({ onRegister }) {
+  const { isLoading } = useAuthCtx();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -19,10 +19,9 @@ function LoginForm({ onLogin }) {
     }),
     onSubmit: (values) => {
       console.log("values ===", values);
-      onLogin(values);
+      onRegister(values);
     },
   });
-
   return (
     <div className="w-full max-w-sm md:mt-12 ">
       <form onSubmit={formik.handleSubmit} className="px-4 pt-4 pb-4 mb-4 ">
@@ -34,7 +33,6 @@ function LoginForm({ onLogin }) {
             className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="email"
             type="email"
-            name="email"
             placeholder="Email"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -49,10 +47,9 @@ function LoginForm({ onLogin }) {
             Password
           </label>
           <input
-            className="shadow-fuchsia-700 border border-fuchsia-700 shadow-inner rounded w-full py-2 px-3 text-gray-700"
+            className="shadow-fuchsia-700 shadow-inner border border-fuchsia-700 rounded w-full py-2 px-3 text-gray-700"
             id="password"
             type="password"
-            name="password"
             placeholder="password"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -62,21 +59,21 @@ function LoginForm({ onLogin }) {
             <div className="text-fuchsia-500">{formik.errors.password}</div>
           ) : null}
         </div>
-        <div className="grid grid-cols-2 gap-4 items-center text-center">
+        <div className="grid grid-cols-2 gap-6 items-center text-center">
           <button
-            disabled={isLoadinng}
+            disabled={isLoading}
             type="submit"
             className="bg-white  border-fuchsia-700 border-4 shadow-lg shadow-fuchsia-500/40 hover:bg-fuchsia-700 text-xl text-black hover:text-white font-bold py-3 px-6 rounded-full"
           >
-            Sign In
+            Register
           </button>
           <p className="text-white">
-            Or register?
+            Have account?
             <Link
-              to={"/register"}
-              className="inline-block font-bold text-lg text-fuchsia-500 border-b-4 border-fuchsia-700 "
+              to={"/login"}
+              className="inline-block font-bold text-lg text-fuchsia-500 underline"
             >
-              Register here
+              Login here
             </Link>
           </p>
         </div>
@@ -85,4 +82,4 @@ function LoginForm({ onLogin }) {
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

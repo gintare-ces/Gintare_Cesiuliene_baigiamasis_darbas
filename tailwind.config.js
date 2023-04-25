@@ -1,28 +1,26 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}"
-  ],
+// tailwind.config.js
+
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
-    container: {
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+    extend: {
+      colors: {
+        primary: "#FF0000",
+      },
+      backgroundImage: {
+        hero: "./src/img/2802373_5149.jpg",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
+        },
       },
     },
-    // colors: {
-    //   'white': '#fffff',
-    //   'fuchsia': {
-    //     600: 'c026d3',
-    //     700: '#a21caf',
-    //   },
-    // },
-    
   },
   plugins: [],
-}
-
+};

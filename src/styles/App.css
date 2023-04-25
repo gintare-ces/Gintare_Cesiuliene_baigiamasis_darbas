@@ -3,15 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        font-family: 'Roboto', sans-serif;
-    }
-}    
-/* @layer utilities {
-    .nav_link {
-        @apply px-4 py-4 text-xl font-roboto text-white;
-    }
-    .links {
-        @apply bg-fuchsia-600;
-    }
-} */
+  html {
+    font-family: "Roboto", sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background: rgb(16, 18, 42);
+    background: linear-gradient(
+      160deg,
+      rgba(16, 18, 42, 1) 60%,
+      rgba(142, 38, 213, 1) 88%,
+      rgba(226, 39, 191, 1) 94%
+    );
+  }
+}
