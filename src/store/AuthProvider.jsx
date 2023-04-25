@@ -8,6 +8,8 @@ const AuthContext = createContext({
   logout() {},
   register() {},
   isLoading: false,
+  isLoggedIn: false,
+  shopAdded() {},
 });
 
 AuthContext.displayName = "AutentifikacijaCTX";
@@ -17,7 +19,7 @@ function AuthProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
+   
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
@@ -29,11 +31,12 @@ function AuthProvider({ children }) {
       } else {
         // User is signed out
         // ...
+        
         console.log("Logout user");
         setUser(null);
       }
-      setIsLoading(false);
     });
+    
   }, []);
   const isLoggedIn = !!user;
 
