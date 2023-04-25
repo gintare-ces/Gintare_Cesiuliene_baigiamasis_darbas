@@ -16,6 +16,6 @@
       "react"
   ],
   "rules": {
-      "react/prop-types": "warn"
+      "react/prop-types": "off"
   }
 }
