@@ -24,7 +24,7 @@ function LoginForm({ onLogin }) {
   });
 
   return (
-    <div className="w-full max-w-xs md:mt-12 ">
+    <div className="w-full max-w-sm md:mt-12 ">
       <form onSubmit={formik.handleSubmit} className="px-4 pt-4 pb-4 mb-4 ">
         <div className="mb-8">
           <label className="block text-white text-xl font-bold mb-2" htmlFor="email">
@@ -74,7 +74,7 @@ function LoginForm({ onLogin }) {
             Or register?
             <Link
               to={"/register"}
-              className="inline-block font-bold text-lg text-fuchsia-700 border-b-4 border-fuchsia-700 "
+              className="inline-block font-bold text-lg text-fuchsia-500 border-b-4 border-fuchsia-700 "
             >
               Register here
             </Link>

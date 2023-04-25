@@ -11,10 +11,10 @@
     height: 100%;
     background: rgb(16, 18, 42);
     background: linear-gradient(
-      180deg,
-      rgba(16, 18, 42, 1) 50%,
-      rgba(142, 38, 213, 1) 82%,
-      rgba(226, 39, 191, 1) 97%
+      160deg,
+      rgba(16, 18, 42, 1) 60%,
+      rgba(142, 38, 213, 1) 88%,
+      rgba(226, 39, 191, 1) 94%
     );
   }
 }

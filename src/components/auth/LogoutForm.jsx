@@ -25,7 +25,7 @@ function LogoutForm() {
       className="inline-block py-.1 px-4 rounded-full  border-fuchsia-600 border-2 shadow-fuchsia-700 shadow-inner"
     >
       <i
-        className="fa fa-sign-out text-white hover:text-fuchsia-600 sm:text-lg md:text-xl"
+        className="fa fa-sign-out text-white hover:text-fuchsia-600 sm:text-lg md:text-xl lg:text-2xl"
         aria-hidden="true"
       ></i>
     </button>

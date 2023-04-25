@@ -8,25 +8,25 @@ function Header() {
   return (
     <header className="pt-6">
       <div className="md:px-10 relative flex w-full flex-wrap items-center justify-between ">
-        <Link to={"/"} className="p-2 py-2 text-2xl font-roboto text-white  font-bold">
+        <Link to={"/"} className="p-2 py-2 text-2xl lg:text-3xl font-roboto text-white  font-bold">
           <i
-            className="fa fa-envira bg-clip-text bg-gradient-to-r from-cyan-600 hover:border-b-4 hover:border-fuchsia-700 text-transparent"
+            className="fa fa-envira bg-clip-text bg-gradient-to-r from-cyan-300 to-fuchsia-700 text-transparent"
             aria-hidden="true"
           ></i>
           SHOP
         </Link>
         <nav className="pl-6">
-          {isLoggedIn && (
+          {isLoggedIn && 
             <>
               <NavLink
                 to={"/shops"}
-                className="px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
+                className="px-5 py-2 text-xl lg:text-2xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
               >
                 Shops
               </NavLink>
               <NavLink
                 to={"/shops/add"}
-                className="px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
+                className="px-5 py-2 text-xl lg:text-2xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
               >
                 Add Shop
               </NavLink>
@@ -34,23 +34,23 @@ function Header() {
                 <LogoutForm />
               </NavLink>
             </>
-          )}
-          {!isLoggedIn && (
+          }
+          {!isLoggedIn && 
             <NavLink
               to={"/login"}
-              className="px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
+              className="px-5 py-2 text-xl lg:text-2xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
             >
               Login
             </NavLink>
-          )}
-          {!isLoggedIn && (
+          }
+          {!isLoggedIn && 
             <NavLink
               to={"/register"}
-              className="px-5 py-2 text-xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
+              className="px-5 py-2 text-xl lg:text-2xl font-roboto text-white hover:border-b-4 hover:border-fuchsia-700 font-bold"
             >
               Register
             </NavLink>
-          )}
+          }
         </nav>
       </div>
     </header>
