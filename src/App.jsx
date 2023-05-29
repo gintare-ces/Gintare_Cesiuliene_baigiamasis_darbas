@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ShopsPage from "./pages/ShopsPage";
@@ -19,12 +19,13 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        {isLoggedIn && (
-          <>
-            <Route path="/shops" element={<ShopsPage />} />
-            <Route path="/shops/add" element={<AddShopPage />} />
-          </>
-        )}
+        
+        <Route 
+          path="/shops" 
+          element={isLoggedIn ?<ShopsPage
+          /> : <Navigate to={'/login'} />} />
+        <Route path="/shops/add" element={isLoggedIn ? <AddShopPage /> : <Navigate to={'/login'} />} />
+         
       </Routes>
     </div>
   );

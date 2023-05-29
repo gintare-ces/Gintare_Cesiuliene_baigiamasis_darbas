@@ -15,8 +15,9 @@ const AuthContext = createContext({
 AuthContext.displayName = "AutentifikacijaCTX";
 
 function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(auth);
   const [isLoading, setIsLoading] = useState(false);
+  const isLoggedIn = !!user
 
   useEffect(() => {
    
@@ -38,7 +39,6 @@ function AuthProvider({ children }) {
     });
     
   }, []);
-  const isLoggedIn = !!user;
 
   function login(userObj) {
     setUser(userObj);
