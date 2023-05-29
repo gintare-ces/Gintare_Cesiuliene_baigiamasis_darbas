@@ -37,12 +37,12 @@ function ShopPage() {
     return <Loading />;
   }
   return (
-    <div className="container mx-auto ">
-      <h1 className="text-white text-3xl font-bold px-4 pt-12 pb-4">
+    <div className="container mx-auto">
+      <h1 className="text-white text-3xl font-bold pl-2 py-2 bg-white bg-opacity-60 backdrop-blur-lg rounded drop-shadow-lg">
         <i className="fa fa-shopping-bag" aria-hidden="true"></i> Shops
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 lg:grid-cols-3">
         {shopsArr.map((sObj) => (
           <SingleShopCard item={sObj} key={sObj.uid} />
         ))}
