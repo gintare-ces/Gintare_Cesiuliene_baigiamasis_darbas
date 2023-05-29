@@ -42,7 +42,7 @@ function AddShopForm({ onNewShop }) {
 
   return (
     <div className="w-full max-w-xl mt-2 mx-auto">
-      <form onSubmit={formik.handleSubmit} className=" px-8 pt-6 pb-8 mb-4 ">
+      <form onSubmit={formik.handleSubmit} className="  pt-6 pb-8 mb-4 ">
         <h2 className="text-white text-3xl font-bold px-4 pt-10 pb-8 text-center">Add your Shop</h2>
         <div className="mb-6">
           <label className="block text-white text-xl font-bold mb-2" htmlFor="shopName">

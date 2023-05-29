@@ -71,7 +71,7 @@ function RegisterForm({ onRegister }) {
             Have account?
             <Link
               to={"/login"}
-              className="inline-block font-bold text-lg text-fuchsia-500 underline"
+              className="inline-block font-bold text-lg text-fuchsia-500 border-b-4 border-fuchsia-700"
             >
               Login here
             </Link>
